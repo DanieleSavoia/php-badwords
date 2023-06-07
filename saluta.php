@@ -1,6 +1,6 @@
 <?php
 $testoiniziale = "{$_POST['paragrafo']} Parola da sostituire:{$_POST['sostituzione']}";
-$testofinale = str_replace('sostituzione', "***", $_POST['paragrafo'], $num_sostituzioni);
+$testofinale = str_ireplace($_POST['sostituzione'], "***", $_POST['paragrafo']);
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +15,9 @@ $testofinale = str_replace('sostituzione', "***", $_POST['paragrafo'], $num_sost
 
 <body>
     Testo iniziale:
-    <h3><?= $testoiniziale; ?></h3>
+    <div><?= $testoiniziale; ?></div>
     Testo censurato:
-    <h3><?= $testofinale; ?></h3>
+    <div><?= $testofinale; ?></div>
 
 
 
